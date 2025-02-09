@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mobile optimization */
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  input, textarea, select {
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+  }
+  
+  /* Improve touch targets */
+  button, a {
+    min-height: 44px;
+  }
+}
+
+/* Custom scrollbar for iOS-like feel */
+@layer utilities {
+  .scrollbar-ios {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-ios::-webkit-scrollbar {
+    display: none;
+  }
+}
